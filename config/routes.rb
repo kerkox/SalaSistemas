@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  resources :reservations
   resources :users
   resources :periods
   resources :rooms

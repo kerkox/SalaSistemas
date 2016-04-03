@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_inicio: 2016-04-02 18:59:11
+  fecha_final: 2016-04-02 18:59:11
+  User_id: 
+  Room_id: 
+  Period_id: 
+
+two:
+  fecha_inicio: 2016-04-02 18:59:11
+  fecha_final: 2016-04-02 18:59:11
+  User_id: 
+  Room_id: 
+  Period_id: 
