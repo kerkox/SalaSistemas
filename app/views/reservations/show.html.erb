@@ -1,29 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Fecha inicio:</strong>
-  <%= @reservation.fecha_inicio %>
-</p>
+  <p>
+    <strong>Fecha:</strong>
+    <%= @reservation.fecha %>
+  </p>
 
-<p>
-  <strong>Fecha final:</strong>
-  <%= @reservation.fecha_final %>
-</p>
+  <p>
+    <strong>Hora inicio:</strong>
+    <%= @reservation.hora_inicio %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @reservation.User %>
-</p>
+  <p>
+    <strong>Hora finalizacion:</strong>
+    <%= @reservation.hora_finalizacion %>
+  </p>
 
-<p>
-  <strong>Room:</strong>
-  <%= @reservation.Room %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @reservation.User %>
+  </p>
 
-<p>
-  <strong>Period:</strong>
-  <%= @reservation.Period %>
-</p>
+  <p>
+    <strong>Room:</strong>
+    <%= @reservation.Room %>
+  </p>
 
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+  <p>
+    <strong>Period:</strong>
+    <%= @reservation.Period %>
+  </p>
+
+  <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+  <%= link_to 'Back', reservations_path %>
+</div>

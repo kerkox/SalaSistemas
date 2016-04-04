@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402235911) do
+ActiveRecord::Schema.define(version: 20160404002122) do
 
   create_table "periods", force: :cascade do |t|
     t.date     "fecha_inicio"
@@ -21,13 +21,14 @@ ActiveRecord::Schema.define(version: 20160402235911) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "fecha_inicio"
-    t.datetime "fecha_final"
+    t.date     "fecha"
+    t.time     "hora_inicio"
+    t.time     "hora_finalizacion"
     t.integer  "User_id"
     t.integer  "Room_id"
     t.integer  "Period_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "reservations", ["Period_id"], name: "index_reservations_on_Period_id"

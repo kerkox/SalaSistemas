@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fecha_inicio: 2016-04-02 18:59:11
-  fecha_final: 2016-04-02 18:59:11
+  fecha: 2016-04-03
+  hora_inicio: 2016-04-03 19:21:22
+  hora_finalizacion: 2016-04-03 19:21:22
   User_id: 
   Room_id: 
   Period_id: 
 
 two:
-  fecha_inicio: 2016-04-02 18:59:11
-  fecha_final: 2016-04-02 18:59:11
+  fecha: 2016-04-03
+  hora_inicio: 2016-04-03 19:21:22
+  hora_finalizacion: 2016-04-03 19:21:22
   User_id: 
   Room_id: 
   Period_id: 

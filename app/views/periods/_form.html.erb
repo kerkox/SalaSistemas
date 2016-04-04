@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field input-field col s12">
     <%= f.label :fecha_inicio %><br>
-    <%= f.date_select :fecha_inicio %>
+    <%= f.text_field :fecha_inicio, :class => "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :fecha_finalizacion %><br>
-    <%= f.date_select :fecha_finalizacion %>
+    <%= f.text_field :fecha_finalizacion, :class => "datepicker" %>
   </div>
   <div class="actions">
     <%= f.submit %>

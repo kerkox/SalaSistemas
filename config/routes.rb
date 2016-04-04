@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :reservations
   root 'welcome#index'
 
-  resources :reservations
   resources :users
   resources :periods
   resources :rooms

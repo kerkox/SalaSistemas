@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%= render 'nav' %>
 
-<p>
-  <strong>Fecha inicio:</strong>
-  <%= @period.fecha_inicio %>
-</p>
 
-<p>
-  <strong>Fecha finalizacion:</strong>
-  <%= @period.fecha_finalizacion %>
-</p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_period_path(@period) %> |
-<%= link_to 'Back', periods_path %>
+	<p>
+	  <strong>Fecha inicio:</strong>
+	  <%= @period.fecha_inicio %>
+	</p>
+
+	<p>
+	  <strong>Fecha finalizacion:</strong>
+	  <%= @period.fecha_finalizacion %>
+	</p>
+
+	<%= link_to 'Edit', edit_period_path(@period) %> |
+	<%= link_to 'Back', periods_path %>
+</div>

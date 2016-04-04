@@ -1,34 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%= render 'nav' %>
 
-<p>
-  <strong>Identificacion:</strong>
-  <%= @user.identificacion %>
-</p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @user.nombre %>
-</p>
+  <p>
+    <strong>Identificacion:</strong>
+    <%= @user.identificacion %>
+  </p>
 
-<p>
-  <strong>Apellidos:</strong>
-  <%= @user.apellidos %>
-</p>
+  <p>
+    <strong>Nombre:</strong>
+    <%= @user.nombre %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Apellidos:</strong>
+    <%= @user.apellidos %>
+  </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>Penalizaciones:</strong>
-  <%= @user.penalizaciones %>
-</p>
+  <p>
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <p>
+    <strong>Penalizaciones:</strong>
+    <%= @user.penalizaciones %>
+  </p>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>

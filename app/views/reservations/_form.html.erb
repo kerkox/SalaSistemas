@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fecha_inicio %><br>
-    <%= f.datetime_select :fecha_inicio %>
+    <%= f.label :fecha %><br>
+    <%= f.text_field :fecha, :class => "datepicker" %>
   </div>
   <div class="field">
-    <%= f.label :fecha_final %><br>
-    <%= f.datetime_select :fecha_final %>
+    <%= f.label :hora_inicio %><br>
+    <%= f.text_field :hora_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_finalizacion %><br>
+    <%= f.text_field :hora_finalizacion %>
   </div>
   <div class="field">
     <%= f.label :User_id %><br>

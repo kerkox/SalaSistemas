@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render 'nav' %>
 
-<h1>Listing Periods</h1>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fecha inicio</th>
-      <th>Fecha finalizacion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Listing Periods</h1>
 
-  <tbody>
-    <% @periods.each do |period| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= period.fecha_inicio %></td>
-        <td><%= period.fecha_finalizacion %></td>
-        <td><%= link_to 'Show', period %></td>
-        <td><%= link_to 'Edit', edit_period_path(period) %></td>
-        <td><%= link_to 'Destroy', period, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Fecha inicio</th>
+        <th>Fecha finalizacion</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @periods.each do |period| %>
+        <tr>
+          <td><%= period.fecha_inicio %></td>
+          <td><%= period.fecha_finalizacion %></td>
+          <td><%= link_to 'Show', period, :class => "btn white red-text" %></td>
+          <td><%= link_to 'Edit', edit_period_path(period), :class => "btn white red-text" %></td>
+          <td><%= link_to 'Destroy', period, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn red white-text" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Period', new_period_path %>
+  <br>
+
+  <%= link_to 'New Period', new_period_path, :class  => "btn white red-text" %>
+</div>
