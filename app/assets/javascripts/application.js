@@ -11,14 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require jquery
 //= require materialize-sprockets
 //= require jquery-ui
 //= require jquery-ui/datepicker
+//= require turbolinks
 
 $(function() {
-  $('.datepicker').datepicker();
+	$.turbo.isReady
+  	$('.datepicker').datepicker();
 });
