@@ -28,9 +28,9 @@
           <td><%= user.email %></td>
           <td><%= user.password %></td>
           <td><%= user.penalizaciones %></td>
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', user, :class => "btn white red-text" %></td>
+          <td><%= link_to 'Edit', edit_user_path(user), :class => "btn white red-text" %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn red white-text" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -38,5 +38,5 @@
 
   <br>
 
-  <%= link_to 'New User', new_user_path %>
+  <%= link_to 'New User', new_user_path, :class => "btn white red-text" %>
 </div>

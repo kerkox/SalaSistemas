@@ -21,9 +21,9 @@
           <td><%= room.nombre %></td>
           <td><%= room.cantidad_total %></td>
           <td><%= room.cantidad_disponible %></td>
-          <td><%= link_to 'Show', room %></td>
-          <td><%= link_to 'Edit', edit_room_path(room) %></td>
-          <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', room, :class => "btn white red-text" %></td>
+          <td><%= link_to 'Edit', edit_room_path(room), :class => "btn white red-text" %></td>
+          <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn red white-text" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -31,5 +31,5 @@
 
   <br>
 
-  <%= link_to 'New Room', new_room_path %>
+  <%= link_to 'New Room', new_room_path, :class => "btn white red-text" %>
 </div>

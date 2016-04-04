@@ -1,8 +1,21 @@
+<nav>
+	<div class="nav-wrapper white">
+		<div class="row">
+		    <div class="col s10">
+		        <%= link_to 'Inicio', root_path, :class => "btn white red-text"%>
+			</div>
+			<div class="col s2">
+				<a id="btn-usuario" href="#" class="btn white red-text"> User </a>
+			</div>
+		</div>
+	</div>
+</nav>
+
 <div class="caontainer">
 	<h1>Editing Reservation</h1>
 	
 	<%= render 'form' %>
 
-	<%= link_to 'Show', @reservation %> |
-	<%= link_to 'Back', reservations_path %>
+	<%= link_to 'Show', @reservation, :class => "btn white red-text" %> |
+	<%= link_to 'Back', reservations_path, :class => "btn white red-text" %>
 </div>
