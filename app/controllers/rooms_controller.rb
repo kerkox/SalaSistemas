@@ -24,7 +24,8 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.json
   def create
-    @room = Room.new(room_params)
+    @room = Room.new(room_params_new)
+    @room.cantidad_disponible = @room.cantidad_total
 
     respond_to do |format|
       if @room.save
@@ -41,7 +42,7 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1.json
   def update
     respond_to do |format|
-      if @room.update(room_params)
+      if @room.update(room_params_update) and @room.cantidad_total >= @room.cantidad_disponible
         format.html { redirect_to @room, notice: 'Room was successfully updated.' }
         format.json { render :show, status: :ok, location: @room }
       else
@@ -68,7 +69,11 @@ class RoomsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def room_params
-      params.require(:room).permit(:nombre, :cantidad_total, :cantidad_disponible)
+    def room_params_new
+      params.require(:room).permit(:nombre, :cantidad_total)
+    end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def room_params_update
+      params.require(:room).permit(:cantidad_disponible)
     end
 end

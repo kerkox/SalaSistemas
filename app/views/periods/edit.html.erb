@@ -3,7 +3,27 @@
 <div class="container">
 	<h1>Editing Period</h1>
 
-	<%= render 'form' %>
+	<%= form_for(@period) do |f| %>
+	  <% if @period.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@period.errors.count, "error") %> prohibited this period from being saved:</h2>
+
+	      <ul>
+	      <% @period.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <div class="field">
+	    <%= f.label :fecha_finalizacion %><br>
+	    <%= f.text_field :fecha_finalizacion, :class => "datepicker" %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit :class => "btn red white-text" %>
+	  </div>
+	<% end %>
 
 	<%= link_to 'Show', @period, :class => "btn white red-text" %> |
 	<%= link_to 'Back', periods_path, :class => "btn white red-text" %>

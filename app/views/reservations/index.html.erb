@@ -1,25 +1,14 @@
-<nav>
-  <div class="nav-wrapper white">
-    <div class="row">
-        <div class="col s10">
-            <%= link_to 'Inicio', root_path, :class => "btn white red-text" %>
-      </div>
-      <div class="col s2">
-        <a id="btn-usuario" href="#" class="btn white red-text"> User </a>
-      </div>
-    </div>
-  </div>
-</nav>
+<%= render 'nav' %>
 
 <div class="container">
   <p id="notice"><%= notice %></p>
 
   <h1>Listing Reservations</h1>
-
+<!-- 
   <table>
     <thead>
       <tr>
-        <th>Fecha</th>
+        <th>Start time</th>
         <th>Hora inicio</th>
         <th>Hora finalizacion</th>
         <th>User</th>
@@ -32,21 +21,33 @@
     <tbody>
       <% @reservations.each do |reservation| %>
         <tr>
-          <td><%= reservation.fecha %></td>
+          <td><%= reservation.start_time %></td>
           <td><%= reservation.hora_inicio %></td>
           <td><%= reservation.hora_finalizacion %></td>
           <td><%= reservation.User %></td>
           <td><%= reservation.Room %></td>
           <td><%= reservation.Period %></td>
-          <td><%= link_to 'Show', reservation, :class => "btn white red-text" %></td>
-          <td><%= link_to 'Edit', edit_reservation_path(reservation), :class => "btn white red-text" %></td>
-          <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn red white-text" %></td>
+          <td><%= link_to 'Show', reservation %></td>
+          <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+          <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
   <br>
-
+ -->
   <%= link_to 'New Reservation', new_reservation_path, :class => "btn white red-text" %>
+  <br>
+  <%= week_calendar number_of_weeks: 2, events: @reservations do |date, reservations| %>
+    <%= date %>
+    <% reservations.each do |reservation| %>
+      <div>
+        <strong class="green-text">Inicio:</strong> <%= reservation.hora_inicio.strftime("%H:%M") %><br>
+        <strong class="green-text">Finalizacion:</strong> <%= reservation.hora_finalizacion.strftime("%H:%M") %><br>
+        <%= link_to 'Show', reservation, :class => "blue-text" %>
+        <%= link_to 'Edit', edit_reservation_path(reservation), :class => "blue-text" %>
+        <%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "red-text" %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

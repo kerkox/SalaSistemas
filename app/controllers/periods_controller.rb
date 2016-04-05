@@ -24,7 +24,7 @@ class PeriodsController < ApplicationController
   # POST /periods
   # POST /periods.json
   def create
-    @period = Period.new(period_params)
+    @period = Period.new(period_params_new)
 
     respond_to do |format|
       if @period.save
@@ -41,7 +41,7 @@ class PeriodsController < ApplicationController
   # PATCH/PUT /periods/1.json
   def update
     respond_to do |format|
-      if @period.update(period_params)
+      if @period.update(period_params_update)
         format.html { redirect_to @period, notice: 'Period was successfully updated.' }
         format.json { render :show, status: :ok, location: @period }
       else
@@ -68,7 +68,11 @@ class PeriodsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def period_params
+    def period_params_new
       params.require(:period).permit(:fecha_inicio, :fecha_finalizacion)
+    end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def period_params_update
+      params.require(:period).permit(:fecha_finalizacion)
     end
 end

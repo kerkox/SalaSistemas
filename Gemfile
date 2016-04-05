@@ -51,3 +51,5 @@ group :development do
   gem 'spring'
 end
 
+# Simple calendar
+gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
