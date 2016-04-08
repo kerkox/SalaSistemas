@@ -1,4 +1,14 @@
-<%= render 'nav' %>
+<nav class="red">
+  <div class="container">
+    <div class="nav-wrapper">
+      <%= link_to 'login', root_path, :class => 'btn red white-text' %>
+      <%= link_to 'periods', periods_path, :class => 'btn red white-text' %>
+      <%= link_to 'reservations', reservations_path, :class => 'btn red white-text' %>
+      <%= link_to 'rooms', rooms_path, :class => 'btn red white-text' %>
+      <%= link_to 'users', users_path, :class => 'btn white red-text' %>
+    </div>
+  </div>
+</nav>
 
 
 <div class="container">
@@ -26,8 +36,6 @@
           <td><%= user.nombre %></td>
           <td><%= user.apellidos %></td>
           <td><%= user.email %></td>
-          <td><%= user.password %></td>
-          <td><%= user.penalizaciones %></td>
           <td><%= link_to 'Show', user, :class => "btn white red-text" %></td>
           <td><%= link_to 'Edit', edit_user_path(user), :class => "btn white red-text" %></td>
           <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn red white-text" %></td>

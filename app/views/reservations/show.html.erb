@@ -1,4 +1,14 @@
-<%= render 'nav' %>
+<nav class="red">
+  <div class="container">
+    <div class="nav-wrapper">
+      <%= link_to 'login', root_path, :class => 'btn red white-text' %>
+      <%= link_to 'periods', periods_path, :class => 'btn red white-text' %>
+      <%= link_to 'reservations', reservations_path, :class => 'btn white red-text' %>
+      <%= link_to 'rooms', rooms_path, :class => 'btn red white-text' %>
+      <%= link_to 'users', users_path, :class => 'btn red white-text' %>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
   <p id="notice"><%= notice %></p>

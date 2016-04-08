@@ -1,7 +1,17 @@
-<%= render 'nav' %>
+<nav class="red">
+  <div class="container">
+    <div class="nav-wrapper">
+      <%= link_to 'login', root_path, :class => 'btn red white-text' %>
+      <%= link_to 'periods', periods_path, :class => 'btn red white-text' %>
+      <%= link_to 'reservations', reservations_path, :class => 'btn red white-text' %>
+      <%= link_to 'rooms', rooms_path, :class => 'btn white red-text' %>
+      <%= link_to 'users', users_path, :class => 'btn red white-text' %>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
-	<h1>Editing Room</h1>
+	<h1>Editing <%= @room.nombre %></h1>
 
 	<%= form_for(@room) do |f| %>
 	  <% if @room.errors.any? %>
@@ -16,6 +26,10 @@
 	    </div>
 	  <% end %>
 
+	  <div class="field">
+	    <%= f.label :cantidad_total %>
+	    <%= f.number_field :cantidad_total, :readonly => true%>
+	  </div>
 	  <div class="field">
 	    <%= f.label :cantidad_disponible %><br>
 	    <%= f.number_field :cantidad_disponible %>

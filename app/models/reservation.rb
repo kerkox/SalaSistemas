@@ -1,5 +1,7 @@
 class Reservation < ActiveRecord::Base
-  belongs_to :User
-  belongs_to :Room
-  belongs_to :Period
+	validates :start_time, presence: true
+
+  	belongs_to :User
+  	belongs_to :Room
+  	belongs_to :Period
 end

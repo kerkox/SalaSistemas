@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 # Materialize
 gem 'materialize-sass'
+# Material icons Google
+gem 'material_icons'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
