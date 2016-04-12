@@ -1,32 +1,45 @@
 <div class="container">
-	<h1>Editing <%= @room.nombre %></h1>
+	<div class="row">
+		<div class="col s12 m6">
+			<h1>Editar Sala</h1>
 
-	<%= form_for(@room) do |f| %>
-	  <% if @room.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+			<%= form_for(@room) do |f| %>
+				<% if @room.errors.any? %>
+					<div id="error_explanation" class="card red lighten-5">
+						<div class="card-content">
+							<spam class="card-title"><%= pluralize(@room.errors.count, "error") %></spam><br>
+							<spam class="card-title">prohibited this room from being saved:</spam>
+							<ul>
+								<% @room.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 m6">
+				<div class="input-field">
+					<%= f.label :cantidad_total %>
+					<%= f.number_field :cantidad_total, :readonly => true%>
+				</div>
+		</div>
+		<div class="col s12 m3">
+				<div class="input-field">
+				    <%= f.label :cantidad_disponible %>
+				    <%= f.number_field :cantidad_disponible %>
+				</div>
+		</div>
+		<div class="col s12 m6">
+				<div class="actions">
+					<%= f.submit :class => "btn red white-text" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
 
-	      <ul>
-	      <% @room.errors.full_messages.each do |message| %>
-	        <li><%= message %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-
-	  <div class="field">
-	    <%= f.label :cantidad_total %>
-	    <%= f.number_field :cantidad_total, :readonly => true%>
-	  </div>
-	  <div class="field">
-	    <%= f.label :cantidad_disponible %><br>
-	    <%= f.number_field :cantidad_disponible %>
-	  </div>
-	  <div class="actions">
-	    <%= f.submit :class => "btn red white-text" %>
-	  </div>
-	<% end %>
-
-	<%= link_to 'Show', @room, :class => "btn white red-text" %> |
-	<%= link_to 'Back', rooms_path, :class => "btn white red-text" %>
+	<%= link_to 'Ver', @room, :class => "btn white red-text" %> |
+	<%= link_to 'Atras', rooms_path, :class => "btn white red-text" %>
 </div>
