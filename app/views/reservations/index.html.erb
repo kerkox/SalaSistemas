@@ -1,54 +1,10 @@
-<nav class="red">
-  <div class="container">
-    <div class="nav-wrapper">
-      <%= link_to 'login', root_path, :class => 'btn red white-text' %>
-      <%= link_to 'periods', periods_path, :class => 'btn red white-text' %>
-      <%= link_to 'reservations', reservations_path, :class => 'btn white red-text' %>
-      <%= link_to 'rooms', rooms_path, :class => 'btn red white-text' %>
-      <%= link_to 'users', users_path, :class => 'btn red white-text' %>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
   <p id="notice"><%= notice %></p>
 
   <h1>Listing Reservations</h1>
-<!-- 
-  <table>
-    <thead>
-      <tr>
-        <th>Start time</th>
-        <th>Hora inicio</th>
-        <th>Hora finalizacion</th>
-        <th>User</th>
-        <th>Room</th>
-        <th>Period</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @reservations.each do |reservation| %>
-        <tr>
-          <td><%= reservation.start_time %></td>
-          <td><%= reservation.hora_inicio %></td>
-          <td><%= reservation.hora_finalizacion %></td>
-          <td><%= reservation.User %></td>
-          <td><%= reservation.Room %></td>
-          <td><%= reservation.Period %></td>
-          <td><%= link_to 'Show', reservation %></td>
-          <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-          <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
- -->
   <%= link_to 'New Reservation', new_reservation_path, :class => "btn white red-text" %>
   <br>
-  <%= week_calendar number_of_weeks: 2, events: @reservations do |date, reservations| %>
+  <%= week_calendar number_of_weeks: 3, events: @reservations do |date, reservations| %>
     <%= date %>
     <% reservations.each do |reservation| %>
       <div>

@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160405160050) do
     t.string   "identificacion"
     t.string   "nombre"
     t.string   "apellidos"
+    t.integer  "tipo"
     t.string   "email"
     t.string   "password"
     t.integer  "penalizaciones"

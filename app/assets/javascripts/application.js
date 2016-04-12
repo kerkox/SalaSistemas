@@ -19,8 +19,10 @@
 //= require jquery-ui
 //= require jquery-ui/datepicker
 //= require turbolinks
+//= require mask
 
 $(function() {
 	$.turbo.isReady
-  	$('.datepicker').datepicker();
+  	$('.datepicker').datepicker({dateFormat: 'dd/mm/yy'});
+  	$('.time').mask('00:00');
 });

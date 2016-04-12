@@ -24,6 +24,10 @@
     <%= f.text_field :apellidos %>
   </div>
   <div class="field">
+    <%= f.label :tipo %><br>
+    <%= select_tag(:tipo, options_for_select([['Admin', 1], ['Monitor', 2], ['Docente', 3], ['Estudiante', 4]], 4), class: "browser-default") %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
@@ -31,11 +35,7 @@
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
-  <div class="field">
-    <label>Confimation password</label>
-    <%= f.password_field :password_confirmation %>
-  </div>
   <div class="actions">
-    <%= f.submit :class => "btn red white-text" %>
+    <%= f.submit class: "btn red white-text" %>
   </div>
 <% end %>

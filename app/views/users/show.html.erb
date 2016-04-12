@@ -1,15 +1,3 @@
-<nav class="red">
-  <div class="container">
-    <div class="nav-wrapper">
-      <%= link_to 'login', root_path, :class => 'btn red white-text' %>
-      <%= link_to 'periods', periods_path, :class => 'btn red white-text' %>
-      <%= link_to 'reservations', reservations_path, :class => 'btn red white-text' %>
-      <%= link_to 'rooms', rooms_path, :class => 'btn red white-text' %>
-      <%= link_to 'users', users_path, :class => 'btn white red-text' %>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
   <p id="notice"><%= notice %></p>
 
@@ -29,8 +17,18 @@
   </p>
 
   <p>
+    <strong>Tipo:</strong>
+    <%= @user.tipo %>
+  </p>
+
+  <p>
     <strong>Email:</strong>
     <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= @user.password %>
   </p>
 
   <p>
@@ -38,6 +36,6 @@
     <%= @user.penalizaciones %>
   </p>
 
-  <%= link_to 'Edit', edit_user_path(@user), :class => "btn white red-text" %> |
-  <%= link_to 'Back', users_path, :class => "btn white red-text" %>
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn white red-text" %> |
+  <%= link_to 'Back', users_path, class: "btn white red-text" %>
 </div>

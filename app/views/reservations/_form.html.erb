@@ -1,41 +1,53 @@
-<%= form_for(@reservation) do |f| %>
-  <% if @reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+<div class="row">
+    <%= form_for(@reservation) do |f| %>
+        <div class="col s12 m6">
+            <% if @reservation.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-      <ul>
-      <% @reservation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                    <ul>
+                        <% @reservation.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+        </div>
+
+    <div class="col s12 m7">
+        <div class="input-field">
+                <label>Fecha:</label>
+                <%= f.text_field :start_time, :class => "datepicker" %>
+        </div>
+    </div><br>
+    <div class="col s12 m6">
+        <div class="input-field">
+            <%= f.label :hora_inicio %>
+            <%= f.text_field :hora_inicio, :class => "time" %>
+        </div>
     </div>
-  <% end %>
-
-  <div class="input-field">
-    <%= f.label :start_time %><br>
-    <%= f.text_field :start_time, :class => "datepicker" %>
-  </div>
-  <div class="input-field">
-    <%= f.label :hora_inicio %><br>
-    <%= f.text_field :hora_inicio %>
-  </div>
-  <div class="input-field">
-    <%= f.label :hora_finalizacion %><br>
-    <%= f.text_field :hora_finalizacion %>
-  </div>
-  <div class="input-field">
-    <%= f.label :User_id %><br>
-    <%= f.text_field :User_id %>
-  </div>
-  <div class="input-field">
-    <%= f.label :Room_id %>
-    <%= f.text_field :Room_id %>
-  </div>
-  <div class="input-field">
-    <%= f.label :Period_id %><br>
-    <%= f.text_field :Period_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit :class => "btn red white-text" %>
-  </div>
-<% end %>
+    <div class="col s12 m6">
+        <div class="input-field">
+            <%= f.label :hora_finalizacion %>
+            <%= f.text_field :hora_finalizacion, :class => "time" %>
+        </div>
+    </div><br>
+    <div class="col s12 m7">
+         <div class="input-field">
+            <%= f.label :User_id %>
+            <%= f.text_field :User_id %>
+        </div>
+        <div class="input-field">
+            <%= f.label :Room_id %><br><bR>
+            <%= f.collection_select :Room_id, Room.all, :id, :nombre, {prompt: "Selecionar Sala"}, class: "browser-default" %>
+        </div>
+        <div class="input-field"><!-- modify the controller -->
+            <%= f.label :Period_id %>
+            <%= f.text_field :Period_id %>
+        </div>
+        <div class="actions">
+            <%= f.submit :class => "btn red white-text" %>
+        </div>
+    </div>
+    <% end %>
+</div>

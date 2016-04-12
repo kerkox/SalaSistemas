@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  identificacion: 
+  identificacion: MyString
   nombre: MyString
   apellidos: MyString
-  email: 
-  password: 
+  tipo: 1
+  email: MyString
+  password: MyString
   penalizaciones: 1
 
 two:
-  identificacion: 
+  identificacion: MyString
   nombre: MyString
   apellidos: MyString
-  email: 
-  password: 
+  tipo: 1
+  email: MyString
+  password: MyString
   penalizaciones: 1

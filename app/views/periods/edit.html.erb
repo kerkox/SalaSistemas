@@ -1,41 +1,30 @@
-<nav class="red">
-	<div class="container">
-		<div class="nav-wrapper">
-			<%= link_to 'login', root_path, :class => 'btn red white-text' %>
-			<%= link_to 'periods', periods_path, :class => 'btn white red-text' %>
-			<%= link_to 'reservations', reservations_path, :class => 'btn red white-text' %>
-			<%= link_to 'rooms', rooms_path, :class => 'btn red white-text' %>
-			<%= link_to 'users', users_path, :class => 'btn red white-text' %>
-		</div>
-	</div>
-</nav>
-
 <div class="container">
 	<h1>Editing Period</h1>
 
 	<%= form_for(@period) do |f| %>
-	  <% if @period.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@period.errors.count, "error") %> prohibited this period from being saved:</h2>
+		<% if @period.errors.any? %>
+			<div id="error_explanation" class="card red lighten-5">
+				<div class="card-content">
+					<spam class="card-title"><%= pluralize(@period.errors.count, "error") %></spam><br>
+					<span class="card-title">prohibited this period from being saved:</span>
+					<ul>
+						<% @period.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
 
-	      <ul>
-	      <% @period.errors.full_messages.each do |message| %>
-	        <li><%= message %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-
-	  <div class="field">
-	    <%= f.label :fecha_finalizacion %><br>
-	    <%= f.text_field :fecha_finalizacion, :class => "datepicker" %>
-	  </div>
-	  <div class="actions">
-	    <%= f.submit :class => "btn red white-text" %>
-	  </div>
+	<div class="input-field">
+	<%= f.label :fecha_finalizacion %>
+		<%= f.text_field :fecha_finalizacion, :class => "datepicker" %>
+	</div>
+	<div class="input-field">
+		<%= f.submit :class => "btn red white-text" %>
+	</div>
 	<% end %>
 
 	<%= link_to 'Show', @period, :class => "btn white red-text" %> |
 	<%= link_to 'Back', periods_path, :class => "btn white red-text" %>
 </div>
-

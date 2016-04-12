@@ -1,28 +1,53 @@
-<nav class="red">
-	<div class="container">
-		<div class="nav-wrapper">
-			<%= link_to 'login', root_path, :class => 'btn red white-text' %>
-			<%= link_to 'periods', periods_path, :class => 'btn white red-text' %>
-			<%= link_to 'reservations', reservations_path, :class => 'btn red white-text' %>
-			<%= link_to 'rooms', rooms_path, :class => 'btn red white-text' %>
-			<%= link_to 'users', users_path, :class => 'btn red white-text' %>
-		</div>
-	</div>
-</nav>
-
 <div class="container">
 	<p id="notice"><%= notice %></p>
 
-	<p>
-	  <strong>Fecha inicio:</strong>
-	  <%= @period.fecha_inicio %>
-	</p>
+	<div class="row">
+	  	<div class="col s12 m6 red white-text">
+	  		INICIO:
+	  	</div><br>
+	  	<div class="col m2 red white-text center-align hide-on-med-and-down">
+	  		Dia
+	  	</div>
+	  	<div class="col m2 red white-text center-align hide-on-med-and-down">
+	  		Mes
+	  	</div>
+	  	<div class="col m2 red white-text center-align hide-on-med-and-down">
+	  		A&ntilde;o
+	  	</div><br class="hide-on-med-and-down">
+  		<div class="col s4 m2 red-text center-align">
+	  		<%= @period.fecha_inicio.day %>
+	  	</div>
+	  	<div class="col s4 m2 red-text center-align">
+	  		<%= @period.fecha_inicio.month %>
+	  	</div>
+	  	<div class="col s4 m2 red-text center-align">
+	  		<%= @period.fecha_inicio.year %>
+	  	</div>
+	</div>
 
-	<p>
-	  <strong>Fecha finalizacion:</strong>
-	  <%= @period.fecha_finalizacion %>
-	</p>
-
+	<div class="row">
+	  	<div class="col s12 m6 red white-text">
+	  		FINALIZACION:
+	  	</div><br>
+	  	<div class="col m2 red white-text center-align hide-on-med-and-down">
+	  		Dia
+	  	</div>
+	  	<div class="col m2 red white-text center-align hide-on-med-and-down">
+	  		Mes
+	  	</div>
+	  	<div class="col m2 red white-text center-align hide-on-med-and-down">
+	  		A&ntilde;o
+	  	</div><br class="hide-on-med-and-down">
+  		<div class="col s4 m2 red-text center-align">
+	  		<%= @period.fecha_finalizacion.day %>
+	  	</div>
+	  	<div class="col s4 m2 red-text center-align">
+	  		<%= @period.fecha_finalizacion.month %>
+	  	</div>
+	  	<div class="col s4 m2 red-text center-align">
+	  		<%= @period.fecha_finalizacion.year %>
+	  	</div>
+	</div>
 	<%= link_to 'Edit', edit_period_path(@period), :class => "btn white red-text" %> |
 	<%= link_to 'Back', periods_path, :class => "btn white red-text" %>
 </div>
