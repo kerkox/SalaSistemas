@@ -5,33 +5,32 @@
 
     <!-- -->
     <div class="row">
-        <div class="col s6 m2 l2 red">
+        <div class="col s6 m2 red">
             <p class="white-text">INICIO</p>
         </div>
-        <div class="col s6 m2 l2 red">
+        <div class="col s6 m2 red">
             <p class="white-text">FINALIZACION</p>
         </div>
-        <div class="col s12 m8 l8 hide-on-small-only red center">
+        <div class="col m2 red hide-on-small-only center">
             <p class="white-text">ACTIONS</p>
         </div>
     </div>
     <% @periods.each do |period| %>
         <div class="row">
-            <div class="col s6 m2 l2">
+            <div class="col s6 m2">
                 <p class="red-text"><%= period.fecha_inicio %></p>
             </div>
-            <div class="col s6 m2 l2">
+            <div class="col s6 m2">
                 <p class="red-text"><%= period.fecha_finalizacion %></p>
             </div>
-            <div class="col s12 m8 l8 right">
-                    <%= link_to '<i class="material-icons hide-on-med-and-down right">close</i>Eliminar'.html_safe , period, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn red white-text right" %>
-                    <%= link_to '<i class="material-icons hide-on-med-and-down right">edit</i>Editar'.html_safe, edit_period_path(period), :class => " btn white red-text right" %>
-                    <%= link_to '<i class="material-icons hide-on-med-and-down right">slideshow</i>Ver'.html_safe, period, :class => "btn white red-text right" %>
+            <div class="col s12 m2">
+                <%= link_to '<i class="material-icons">close</i>'.html_safe , period, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn-floating red right" %>
+                <%= link_to '<i class="material-icons">edit</i>'.html_safe, edit_period_path(period), :class => "btn-floating red right" %>
             </div>
         </div>
     <% end %>
     <!-- -->
     <br>
 
-    <%= link_to 'Nuevo Periodo', new_period_path, :class  => "btn white red-text" %>
+    <%= link_to '<i class="material-icons red-text">add</i>'.html_safe, new_period_path, :class  => "btn-floating btn-large white" %>
 </div>

@@ -27,7 +27,9 @@ class ReservationsController < ApplicationController
   def create
     @rooms = Room.all
     @reservation = Reservation.new(reservation_params)
+    @reservation.Period = Period.last
 
+#    revisar errores
     respond_to do |format|
       if @reservation.save
         format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
@@ -71,6 +73,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:start_time, :hora_inicio, :hora_finalizacion, :User_id, :Room_id, :Period_id)
+      params.require(:reservation).permit(:start_time, :hora_inicio, :hora_finalizacion, :User_id, :Room_id)
     end
 end

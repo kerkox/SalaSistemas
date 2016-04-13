@@ -5,7 +5,7 @@
             <% if @period.errors.any? %>
                 <div id="error_explanation" class="card red lighten-5">
                     <div class="card-content">
-                        <spam class="card-title"><%= pluralize(@period.errors.count, "error") %></spam><br>
+                        <span class="card-title"><%= pluralize(@period.errors.count, "error") %></span><br>
                         <span class="card-title">prohibited this period from being saved:</span>
                         <ul>
                             <% @period.errors.full_messages.each do |message| %>

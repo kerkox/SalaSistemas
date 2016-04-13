@@ -23,6 +23,7 @@
 
 $(function() {
 	$.turbo.isReady
+	$('.button-collapse').sideNav();
   	$('.datepicker').datepicker({dateFormat: 'dd/mm/yy'});
   	$('.time').mask('00:00');
 });

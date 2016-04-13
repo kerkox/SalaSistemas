@@ -1,40 +1,40 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
+  <div class="input-field">
     <strong>Identificacion:</strong>
     <%= @user.identificacion %>
-  </p>
+  </div>
 
-  <p>
+  <div class="input-field">
     <strong>Nombre:</strong>
     <%= @user.nombre %>
-  </p>
+  </div>
 
-  <p>
+  <div class="input-field">
     <strong>Apellidos:</strong>
     <%= @user.apellidos %>
-  </p>
+  </div>
 
-  <p>
+  <div class="input-field">
     <strong>Tipo:</strong>
     <%= @user.tipo %>
-  </p>
+  </div>
 
-  <p>
+  <div class="input-field">
     <strong>Email:</strong>
     <%= @user.email %>
-  </p>
+  </div>
 
-  <p>
+  <div class="input-field">
     <strong>Password:</strong>
     <%= @user.password %>
-  </p>
+  </div>
 
-  <p>
+  <div class="input-field">
     <strong>Penalizaciones:</strong>
     <%= @user.penalizaciones %>
-  </p>
+  </div>
 
   <%= link_to 'Edit', edit_user_path(@user), class: "btn white red-text" %> |
   <%= link_to 'Back', users_path, class: "btn white red-text" %>

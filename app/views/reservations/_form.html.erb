@@ -1,3 +1,4 @@
+<%# revisar errores y modificaciones en formulario %>
 <div class="row">
     <%= form_for(@reservation) do |f| %>
         <div class="col s12 m6">
@@ -40,10 +41,6 @@
         <div class="input-field">
             <%= f.label :Room_id %><br><bR>
             <%= f.collection_select :Room_id, Room.all, :id, :nombre, {prompt: "Selecionar Sala"}, class: "browser-default" %>
-        </div>
-        <div class="input-field"><!-- modify the controller -->
-            <%= f.label :Period_id %>
-            <%= f.text_field :Period_id %>
         </div>
         <div class="actions">
             <%= f.submit :class => "btn red white-text" %>

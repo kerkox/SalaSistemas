@@ -1,4 +1,22 @@
 <div class="container">
-	<h1>Welcome#admin</h1>
-	<p>Find me in app/views/welcome/index.html.erb</p>
+	<div class="row">
+		<div class="col s12 m6">
+			<div class="card small">
+				<div class="card-image">
+					<%= image_tag '28270206.jpg' %>
+					<span class="card-title roboto red-text">PERIODO ACTUAL</span>
+				</div>
+				<div class="card-content">
+					<p>[Inserte texto aqui]</p>
+				</div>
+				<div class="card-action">
+					<a href="#" class="red-text"><%= @actualperiod.fecha_inicio %></a>
+					<a href="#" class="red-text"><%= @actualperiod.fecha_finalizacion %></a>
+				</div>
+			</div>
+			<div class="col s12 m12">
+				
+			</div>
+		</div>
+	</div>
 </div>

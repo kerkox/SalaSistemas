@@ -10,31 +10,21 @@
 <header>
 	<nav class="red">
 		<div class="container">
-			<ul>
-				<li>
-					<%= link_to periods_path do %>
-						<i class="material-icons left">date_range</i>
-						PERIODS
-					<% end %>
-				</li>
-				<li>
-					<%= link_to reservations_path do %>
-						<i class="material-icons left">event</i>
-						RESERVATIONS
-					<% end %>
-				</li>
-				<li>
-					<%= link_to rooms_path do %>
-						<i class="material-icons left">room</i>
-						ROOMS
-					<% end %>
-				</li>
-				<li>
-					<%= link_to users_path do %>
-						<i class="material-icons left">account_circle</i>
-						USERS
-					<% end %>
-				</li>
+			<a href="#" class="button-collapse" data-activates="mobile"><i class="material-icons">menu</i></a>
+			<a href="#" class="brand-logo truncate hide-on-large-only">Sala de Sistemas</a>
+			<ul class="hide-on-med-and-down">
+				<li><%= link_to root_path do %><i class="material-icons left">home</i>INICIO<% end %></li>
+				<li><%= link_to periods_path do %><i class="material-icons left">date_range</i>PERIODOS<% end %></li>
+				<li><%= link_to reservations_path do %><i class="material-icons left">event</i>RESERVACIONES<% end %></li>
+				<li><%= link_to rooms_path do %><i class="material-icons left">room</i>SALAS<% end %></li>
+				<li><%= link_to users_path do %><i class="material-icons left">account_circle</i>USUARIOS<% end %></li>
+			</ul>
+			<ul id="mobile" class="side-nav">
+				<li><%= link_to root_path do %><i class="material-icons left">home</i>INICIO<% end %></li>
+				<li><%= link_to periods_path do %><i class="material-icons left">date_range</i>PERIODS<% end %></li>
+				<li><%= link_to reservations_path do %><i class="material-icons left">event</i>RESERVATIONS<% end %></li>
+				<li><%= link_to rooms_path do %><i class="material-icons left">room</i>ROOMS<% end %></li>
+				<li><%= link_to users_path do %><i class="material-icons left">account_circle</i>USERS<% end %></li>
 			</ul>
 		</div>
 	</nav>

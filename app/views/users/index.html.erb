@@ -1,40 +1,51 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-  <h1>Listing Users</h1>
+    <h1>Usuarios</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Identificacion</th>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Tipo</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Penalizaciones</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+    <div class="row">
+        <div class="col m2 red hide-on-med-and-down">
+            <p class="white-text">IDENTIFICACION</p>
+        </div>
+        <div class="col m3 red hide-on-med-and-down">
+            <p class="white-text truncate">NOMBRE Y APELLIDOS</p> 
+        </div>
+        <div class="col m3 red hide-on-med-and-down">
+            <p class="white-text">E-MAIL</p>
+        </div>
+        <div class="col m1 red hide-on-med-and-down center">
+            <p class="white-text">FALTAS</p>
+        </div>
+        <div class="col m3 red hide-on-med-and-down center">
+            <p class="white-text">ACCIONES</p>
+        </div>
+    </div>
+    <div class="row">
+        <% @users.each do |user| %>
+            <div class="col s12 red hide-on-large-only">
+                <p class="white-text">USUARIO:</p>
+            </div>
+            <div class="col s12 m2">
+                <p class="red-text truncate"><%= user.identificacion %></p>
+            </div>
+            <div class="col s12 m3">
+                <p class="red-text truncate"><%= user.nombre %> <%= user.apellidos %></p>
+            </div>
+            <div class="col s10 m3">
+                <p class="red-text truncate"><%= user.email %></p>
+            </div>
+            <div class="col s2 m1 center">
+                <p class="red-text"><%= user.penalizaciones %></p>
+            </div>
+            <div class="col s12 m3">
+                <%= link_to '<i class="material-icons">close</i>'.html_safe, user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-floating red white-text right" %>
+                <%= link_to '<i class="material-icons">edit</i>'.html_safe, edit_user_path(user), class: "btn-floating red white-text right" %>
+                <%= link_to '<i class="material-icons">search</i>'.html_safe, user, class: "btn-floating red white-text right" %>
+            </div>
+        <% end %>
+    </div>
 
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.identificacion %></td>
-          <td><%= user.nombre %></td>
-          <td><%= user.apellidos %></td>
-          <td><%= user.tipo %></td>
-          <td><%= user.email %></td>
-          <td><%= user.penalizaciones %></td>
-          <td><%= link_to 'Show', user, class: "btn white red-text" %></td>
-          <td><%= link_to 'Edit', edit_user_path(user), class: "btn white red-text" %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn red white-text" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <br>
 
-  <br>
-
-  <%= link_to 'New User', new_user_path, class: "btn white red-text" %>
+    <%= link_to '<i class="material-icons red-text">add</i>'.html_safe, new_user_path, class: "btn-floating btn-large white" %>
 </div>
